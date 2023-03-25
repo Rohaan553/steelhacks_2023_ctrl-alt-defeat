@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const VideoRoute = require("./routes/video.route")
 const ReviewRoute = require("./routes/review.route.js")
+const AIRoute = require('./routes/ai.route.js')
 
 dotenv.config()
 
@@ -18,6 +19,7 @@ app.use(express.json())
 
 app.use("/api/videos", VideoRoute)
 app.use("/api/reviews", ReviewRoute)
+app.use("/api/ai", AIRoute);
 
 
 app.listen(7001, () =>{
