@@ -1,0 +1,52 @@
+.custom-file-upload {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 15rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #999;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.custom-file-upload input[type='file'] {
+  display: none;
+}
+
+.custom-file-upload svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.upload-panel {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: lightyellow;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-overlay .spinner-border {
+  color: #fff;
+}
