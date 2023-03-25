@@ -12,12 +12,13 @@ function App() {
     setQuestionAnswers(oldArray => [...oldArray, "Hooray"] );
   }
 
-  const [questionAnswers, setQuestionAnswers] = useState([""])
+  const [questionAnswers, setQuestionAnswers] = useState<String[]>([])
 
   const [role, setRole] = useState('students')
   return (
     <>
       <Header />
+      {/* 
       <div className="row justify-content-center">
         <h2>My Role: {role}</h2>
       </div>
@@ -30,6 +31,7 @@ function App() {
         ))}
       </div>
       <br></br>
+      */}
       <Form passFormData={getData}/>
       <br />
       <br />
