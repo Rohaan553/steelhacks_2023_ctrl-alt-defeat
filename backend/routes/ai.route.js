@@ -64,7 +64,7 @@ router.post('/sumarize', async (req, res) => {
     reqList.push(eachReq)
   })
   const rawResList = await Promise.all(reqList);
-  return res.json(rawResList.forEach(item => JSON.parse(item)));
+  return res.json(rawResList);
 })
 
 module.exports = router;
