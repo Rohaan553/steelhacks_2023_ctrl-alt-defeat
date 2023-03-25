@@ -8,7 +8,7 @@ interface Props {
 
 const Button: React.FC<Props> = ({ text, onClick }) => {
   return (
-    <BButton variant="primary" onClick={onClick}>
+    <BButton style={{"backgroundColor":"white", "color": "#555"}} onClick={onClick}>
       {text}
     </BButton>
   );

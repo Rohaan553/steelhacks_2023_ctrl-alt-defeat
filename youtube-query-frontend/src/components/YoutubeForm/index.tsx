@@ -1,14 +1,15 @@
 import React, { useState, useRef } from 'react';
-import { Form, Row, Col, ProgressBar } from 'react-bootstrap';
+import { Form, Row, Col, ProgressBar, Button } from 'react-bootstrap';
 import { FaUpload } from 'react-icons/fa';
 import './index.css';
 
 interface Props {
   updateLink: (link: string) => void;
+  onSubmit: (link:string) => void;
 }
 
 const YoutubeForm: React.FC<Props> = (props) => {
-  const { updateLink } = props;
+  const { updateLink, onSubmit } = props;
   const [youtubeLink, setYoutubeLink] = useState<string>('');
   const [youtubeVideo, setYoutubeVideo] = useState<File | null>(null);
   const [uploadProgress, setUploadProgress] = useState<number>(0);
@@ -75,7 +76,6 @@ const YoutubeForm: React.FC<Props> = (props) => {
         <Row>
           <Col md={12}>
             <Form.Group controlId="formYoutubeLink">
-              <Form.Label>YouTube Link</Form.Label>
               <Form.Control type="text" placeholder="Enter YouTube Link" value={youtubeLink} onChange={handleYoutubeLinkChange} />
             </Form.Group>
           </Col>
@@ -89,6 +89,11 @@ const YoutubeForm: React.FC<Props> = (props) => {
               </div>
             </Form.Group>
           </Col> */}
+        </Row>
+        <Row className="mt-2 justify-content-center">
+          <Button style={{"backgroundColor":"white", "color": "#555","width": '6rem'}} onClick={(e)=>onSubmit(youtubeLink)}>
+            Analyze
+          </Button>
         </Row>
       </Form>
     </div>

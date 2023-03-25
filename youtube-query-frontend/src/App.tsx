@@ -49,25 +49,25 @@ function App() {
     ])
   }
 
-  const [questionAnswers, setQuestionAnswers] = useState<String[]>([])
+  const [questionAnswers, setQuestionAnswers] = useState<string[]>([])
 
-  const [questionSuggestions, setQuestionSuggestions] = useState<String[]>([])
+  const [questionSuggestions, setQuestionSuggestions] = useState<string[]>([])
 
-  const [questionsAnswered, setQuestionsAnswered] = useState<String[]>([])
+  const [questionsAnswered, setQuestionsAnswered] = useState<string[]>([])
 
   const [loading, setLoading] = useState<Boolean>(false)
 
   const [showResults, setShowResults] = useState<Boolean>(false)
 
   const [role, setRole] = useState('students')
-  const doit = async () => {
-    setLoading(true);
+  const doit = async (link:string) => {
+    setLoading(true)
+    setQuestionAnswers([]);
     function extractVideoId(link: string): string | null {
       const regex = /[?&]v=([^&#]*)/
       const match = link.match(regex)
       return match ? match[1] : null
     }
-    console.log(link)
     const videoId = extractVideoId(link)
     console.log('videoId', videoId)
     if (!videoId) {
@@ -97,10 +97,19 @@ function App() {
     ).then((res) => {
       return res.json()
     })
-    console.log('[debug]res outside:', typeof transcriptRes,transcriptRes)
-    const rawRawData = transcriptRes["res"];
-    console.log('log', rawRawData)
-    setLoading(false);
+    // console.log('[debug]res outside:', typeof transcriptRes,transcriptRes)
+    const rawData = transcriptRes['res']
+    const questions: string[] = []
+    rawData.forEach((item) => {
+      const question = JSON.parse(item)
+      questions.push(question.choices[0].message.content)
+    })
+    const questionText = questions.join(' ')
+
+    const questionList = questionText.split('\n').filter((item) => item !== '')
+    console.log('list: ', questionList)
+    setQuestionAnswers(questionList)
+    setLoading(false)
   }
   return (
     <>
@@ -114,10 +123,10 @@ function App() {
         ))}
       </div>
       <h1>Content Creators</h1>
-      <YoutubeForm updateLink={setLink} />
-      <Button text={'Do it'} onClick={doit}></Button>
-      <Form passFormData={getData} />
-      <br />
+      <YoutubeForm updateLink={setLink} onSubmit={doit} />
+      <br/>
+      <br/>
+      <br/>
       {loading ? (
         <>
           <Spinner animation="grow" role="status" variant="light">

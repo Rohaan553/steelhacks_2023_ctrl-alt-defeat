@@ -1,7 +1,7 @@
 .custom-file-upload {
   display: inline-block;
   position: relative;
-  width: 100%;
+  width: 15rem;
   height: 0;
   padding-bottom: 15rem;
   border: 1px solid #ccc;
@@ -29,9 +29,13 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background-color: lightyellow;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border: solid #641313 5px;
+  border-radius: 15px;
+  background-color: #810F0F;
+  padding: 5vh 25vh;
+  padding-bottom: 3vh;
+  align-items: center;
+  margin: auto;
 }
 
 .loading-overlay {

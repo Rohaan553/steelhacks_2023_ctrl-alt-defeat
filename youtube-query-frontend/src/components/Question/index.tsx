@@ -1,11 +1,18 @@
 import React from 'react' ;
 import "./index.css"
 
-const Question = (props) => {
+interface QuestionProps {
+    question: string;
+}
+
+
+const Question = ({question}:QuestionProps) => {
     return (
-        <div id="question-containing-div">
-            <p id="question-response">{props.question}</p>
-        </div>
+        <div className="card ml-2" key={question} style={{"width": "10rem", height: "8rem"}}>
+      <div className="card-body">
+        <p className="card-text">{question}</p>
+      </div>
+    </div>
     )
 }
 
