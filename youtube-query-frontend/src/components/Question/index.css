@@ -7,6 +7,7 @@
     word-wrap: break-word;
     display: inline-block;
     margin-right: 5vw;
+    margin-bottom: 4vh;
 }
 
 #question-response {
