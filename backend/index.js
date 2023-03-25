@@ -20,6 +20,6 @@ app.use("/api/videos", VideoRoute)
 app.use("/api/reviews", ReviewRoute)
 
 
-app.listen(5000, () =>{
+app.listen(7001, () =>{
     console.log("Backend server is running!");
 })
