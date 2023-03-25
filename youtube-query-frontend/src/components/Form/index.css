@@ -24,7 +24,7 @@
 #role-element-div {
     display: inline-block;
     padding: 1vh 10vh;
-    margin-bottom: 2vh;
+    margin-bottom: 1.5vh;
     background-color: white;
     align-content: center;
 }
@@ -38,7 +38,7 @@
 
 #submit-element-div {
     display: inline-block;
-    padding: 1vh 8vh;
+    padding: 1vh 7vh;
     background-color: white;
     align-content: center;
 }
