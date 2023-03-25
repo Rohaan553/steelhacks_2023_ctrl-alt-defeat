@@ -3,9 +3,12 @@ import { Form, Row, Col, ProgressBar } from 'react-bootstrap';
 import { FaUpload } from 'react-icons/fa';
 import './index.css';
 
-interface Props {}
+interface Props {
+  updateLink: (link: string) => void;
+}
 
-const YoutubeForm: React.FC<Props> = () => {
+const YoutubeForm: React.FC<Props> = (props) => {
+  const { updateLink } = props;
   const [youtubeLink, setYoutubeLink] = useState<string>('');
   const [youtubeVideo, setYoutubeVideo] = useState<File | null>(null);
   const [uploadProgress, setUploadProgress] = useState<number>(0);
@@ -14,6 +17,7 @@ const YoutubeForm: React.FC<Props> = () => {
 
   const handleYoutubeLinkChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setYoutubeLink(event.target.value);
+    updateLink(event.target.value);
     // don't set this, sometimes user mistakenly pastes something and they are in uploading
     // setYoutubeVideo(null);
   };
@@ -69,14 +73,14 @@ const YoutubeForm: React.FC<Props> = () => {
       )}
       <Form onSubmit={handleFormSubmit}>
         <Row>
-          <Col md={6}>
+          <Col md={12}>
             <Form.Group controlId="formYoutubeLink">
               <Form.Label>YouTube Link</Form.Label>
               <Form.Control type="text" placeholder="Enter YouTube Link" value={youtubeLink} onChange={handleYoutubeLinkChange} />
             </Form.Group>
           </Col>
 
-          <Col md={6}>
+          {/* <Col md={6}>
             <Form.Group controlId="formYoutubeVideo">
               <Form.Label>YouTube Video</Form.Label>
               <div className="custom-file-upload" onClick={handleCustomFileUploadClick}>
@@ -84,16 +88,8 @@ const YoutubeForm: React.FC<Props> = () => {
                 <FaUpload />
               </div>
             </Form.Group>
-          </Col>
+          </Col> */}
         </Row>
-
-        {youtubeVideo && (
-          <Row>
-            <Col>
-              <ProgressBar now={uploadProgress} label={`${uploadProgress}%`} />
-            </Col>
-          </Row>
-        )}
       </Form>
     </div>
   );
