@@ -28,4 +28,6 @@ Then you should be able to access the frontend web app in your browser: `http://
 - [React](https://react.dev/)
 - [Vite](https://vitejs.dev/guide/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [React-Bootstrap](https://react-bootstrap.github.io/)
 - [Bootstrap](https://getbootstrap.com/)
+- [React Icons](https://react-icons.github.io/)

@@ -44,10 +44,6 @@ function App() {
   return (
     <>
       <Header />
-      {/* 
-      <div className="row justify-content-center">
-        <h2>My Role: {role}</h2>
-      </div>
       <div className="divider" />
       <div className="row justify-content-center">
         {roles.map((role) => (
