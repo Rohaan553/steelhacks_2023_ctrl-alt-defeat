@@ -4,7 +4,9 @@
     background-color: #810F0F;
     padding: 1vh 2vh;
     width: 25%;
-    word-wrap: break-word
+    word-wrap: break-word;
+    display: inline-block;
+    margin-right: 5vw;
 }
 
 #question-response {

@@ -28,3 +28,16 @@ body {
 .secondary-color {
   color: #FF0100;
 }
+
+#questions-div {
+  text-align: center;
+  display: inline;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+#questions-div-home-container{
+  margin: auto;
+  align-items: center;
+}
