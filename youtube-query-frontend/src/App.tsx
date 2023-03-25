@@ -3,7 +3,7 @@ import RoleCard from './components/RoleCard'
 import Header from './components/Header'
 // import YoutubeForm from './components/YoutubeForm'
 
-const roles = ['students', 'teachers', 'parents']
+const roles = ['Students', 'Teachers', 'Parents']
 function App() {
   const [role, setRole] = useState('students')
   return (
