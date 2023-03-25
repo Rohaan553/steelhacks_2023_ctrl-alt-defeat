@@ -2,14 +2,18 @@ import { useState } from 'react'
 import RoleCard from './components/RoleCard'
 import Header from './components/Header'
 import Form from "./components/Form"
+import Question from "./components/Question"
 
 const roles = ['students', 'teachers', 'parents']
 function App() {
   function getData(url: string, selectedOption: string){
     console.log(url + " " + selectedOption);
+
+    setQuestionAnswers(oldArray => [...oldArray, "Hooray"] );
   }
 
-  const [formData, setFormData] = useState("")
+  const [questionAnswers, setQuestionAnswers] = useState([""])
+
   const [role, setRole] = useState('students')
   return (
     <>
@@ -27,6 +31,19 @@ function App() {
       </div>
       <br></br>
       <Form passFormData={getData}/>
+      <br />
+      <br />
+      <br />
+      <br />
+      <div className="questions-div-home-container">
+        {questionAnswers.map((question, index) =>{
+          return (
+            <div id="questions-div">
+              <Question question={question}/>
+            </div>
+          )
+        })}
+      </div>
     </>
   )
 }
