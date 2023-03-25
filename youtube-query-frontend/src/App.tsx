@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import RoleCard from './components/RoleCard'
 import Header from './components/Header'
+import Form from "./components/Form"
 
 const roles = ['students', 'teachers', 'parents']
 function App() {
@@ -19,6 +20,8 @@ function App() {
           </div>
         ))}
       </div>
+      <br></br>
+      <Form />
     </>
   )
 }
