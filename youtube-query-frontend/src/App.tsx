@@ -5,6 +5,11 @@ import Form from "./components/Form"
 
 const roles = ['students', 'teachers', 'parents']
 function App() {
+  function getData(url: string, selectedOption: string){
+    console.log(url + " " + selectedOption);
+  }
+
+  const [formData, setFormData] = useState("")
   const [role, setRole] = useState('students')
   return (
     <>
@@ -21,7 +26,7 @@ function App() {
         ))}
       </div>
       <br></br>
-      <Form />
+      <Form passFormData={getData}/>
     </>
   )
 }
