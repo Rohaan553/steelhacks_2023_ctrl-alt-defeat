@@ -1,0 +1,18 @@
+#question-containing-div{
+    border: solid #641313 5px;
+    border-radius: 15px;
+    background-color: #810F0F;
+    padding: 1vh 2vh;
+    width: 25%;
+    word-wrap: break-word;
+    display: inline-block;
+    margin-right: 5vw;
+    margin-bottom: 4vh;
+}
+
+#question-response {
+    background-color: white;
+    color: black;
+    font-weight: 400;
+    margin: 2vh;
+}

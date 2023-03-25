@@ -7,7 +7,7 @@ const Header = () => {
         <div className='col text-center'>
           <h1>
             <img className="ytd-yoodle-renderer" src={YoutubeYoodle} alt="Card stars"></img>
-          <span className="text-primary">Query</span></h1>
+          <span className="text-primary" id="header-text">Query</span></h1>
         </div>
       </div>
   )
