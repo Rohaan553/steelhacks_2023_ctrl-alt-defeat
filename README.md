@@ -1,7 +1,7 @@
 # Youtube Query
 > steelhacks_2023_ctrl-alt-defeat
-> 
-> Author: Tempest(tar1182pitt.edu), xxx, xxx
+> Demo: https://www.youtube.com/watch?v=biQEXTU8bCU
+> Author: Tempest(tar1182pitt.edu), Rohaan, Kenechi, Wafik
 
 This is a progressive web application designed to assist users in rapidly learning content, questions, and answers from YouTube videos through AI content processing.
 
